@@ -3,6 +3,7 @@ def contador_positivos():
     contador = 0
     while True:
         numero = int(input("Ingrese un numero(-1 para terminar):"))
+        #Si el numero es menor a 0 termina el programa
         if numero < 0 :
             break
         contador += 1
