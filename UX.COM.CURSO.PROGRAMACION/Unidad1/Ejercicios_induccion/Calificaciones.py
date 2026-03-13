@@ -10,7 +10,7 @@ def calificaciones():
         print("Calificacion: C")
     elif calificacion >= 69:
         print("Calificacion: D")
-    elif calificacion < 69:
+    else:
         print("Calificacion: F")
             
 def main():
