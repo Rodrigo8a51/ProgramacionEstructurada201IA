@@ -1,6 +1,6 @@
 def factorial():
     n = int(input("Ingrese un número: "))
-    print(n)
+
     factorial = 1
     i = 1
     while i <= n:
@@ -9,8 +9,8 @@ def factorial():
     return factorial
 
 def main():
-    factorial_n = factorial()
-    print(factorial_n)
+    factorial_f = factorial()
+    print(factorial_f)
 
 if __name__=="__main__":
     main()
