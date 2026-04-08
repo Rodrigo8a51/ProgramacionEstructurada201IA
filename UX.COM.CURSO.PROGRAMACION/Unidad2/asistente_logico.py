@@ -17,10 +17,8 @@ def asistente():
     elif "hora" in dato or "tiempo" in dato:
         print("La hora actual del sistema es:", hora_actual)
     
-
-
-
-
+    else:
+        print("Lo siento, todavía no entiendo ese comando. ¿Podrías intentar con otra palabra?")
     
 
 
