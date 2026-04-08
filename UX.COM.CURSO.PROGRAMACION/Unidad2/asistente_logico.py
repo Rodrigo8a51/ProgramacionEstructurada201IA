@@ -18,7 +18,7 @@ def asistente():
         print("La hora actual del sistema es:", hora_actual)
     
     else:
-        print("Lo siento, todavía no entiendo ese comando.\n ¿Podrías intentar con otra palabra?")
+        print("Lo siento, todavía no entiendo ese comando.\n¿Podrías intentar con otra palabra?")
     
     print("PROCESO FINALIZADO\nGracias por usar", nombre_asistente)
 
