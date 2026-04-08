@@ -1,10 +1,7 @@
 def factorial():
-    n = int(input("Ingrese un número: "))
-    if n < 0:
-        print("No se puede calcular el factorial de un número negativo.")
-        return None
     factorial = 1
     i = 1
+    n = int(input("Ingrese un número: "))
     while i <= n:
         factorial = factorial * i
         i = i + 1
