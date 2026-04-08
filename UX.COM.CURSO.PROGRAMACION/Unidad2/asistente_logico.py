@@ -4,6 +4,10 @@ def asistente():
 
     dato = input("¿En qué puedo ayudarte? ").lower()
 
+    if "hola" in dato or "buenos dias" in dato:
+        print("¡Hola! Soy tu asistente. Es un gusto saludarte.")
+
+
 
     
 
