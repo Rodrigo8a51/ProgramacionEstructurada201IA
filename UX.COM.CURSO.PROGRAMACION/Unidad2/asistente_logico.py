@@ -4,12 +4,7 @@ def asistente():
 
     dato = input("¿En qué puedo ayudarte? ").lower()
 
-    if dato == "hola" or "buenos dias":
-        print("¡Hola! Soy tu asistente. Es un gusto saludarte.")
 
-    elif dato == "clima" or "temperatura":
-         print("Consultando el servicio meteorológico... Hoy en Xalapa tendremos un día nublado.")
-    
     
 
 
