@@ -6,6 +6,9 @@ def asistente():
 
     if "hola" in dato or "buenos dias" in dato:
         print("¡Hola! Soy tu asistente. Es un gusto saludarte.")
+    
+    elif "clima" in dato or "temperatura" in dato:
+         print("Consultando el servicio meteorológico...  \n Hoy en Xalapa tendremos un día nublado.")
 
 
 
