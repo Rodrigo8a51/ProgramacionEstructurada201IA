@@ -20,6 +20,7 @@ def asistente():
     else:
         print("Lo siento, todavía no entiendo ese comando. ¿Podrías intentar con otra palabra?")
     
+    print("Proceso finalizado. Gracias por usar", nombre_asistente)
 
 
 def main():
