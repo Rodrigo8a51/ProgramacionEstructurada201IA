@@ -7,10 +7,14 @@ def asistente_ia():
     nivel_confianza = float(input("Nivel de confianza calculado (%): "))
 
     if nivel_confianza >= UMBRAL_ALTO:
-        print("Ejecutando la acción:" + instrucción_detectada + "... (Éxito)")
+        print("Ejecutando la acción: " + instrucción_detectada + "... (Éxito)")
+    
+    elif nivel_confianza >= UMBRAL_MINIMO:
+        print("Confianza insuficiente. ¿Se refiere a: " + instrucción_detectada + "? Por favor confirme.")
+
 
 def main():
     asistente_ia()
-    
+
 if __name__ == "__main__":    
     main()
