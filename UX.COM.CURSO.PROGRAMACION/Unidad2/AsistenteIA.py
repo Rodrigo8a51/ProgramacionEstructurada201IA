@@ -8,6 +8,9 @@ def asistente_ia():
 
     if nivel_confianza >= UMBRAL_ALTO:
         print("Ejecutando la acción: " + instrucción_detectada + "... (Éxito)")
+
+        if nivel_confianza > 95.0:
+            print("Aviso: El modelo ha sido reforzado con éxito debido a la alta precisión.")
     
     elif nivel_confianza >= UMBRAL_MINIMO:
         print("Confianza insuficiente. ¿Se refiere a: " + instrucción_detectada + "? Por favor confirme.")
