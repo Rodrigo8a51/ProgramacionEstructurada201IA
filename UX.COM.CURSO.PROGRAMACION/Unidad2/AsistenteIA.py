@@ -12,6 +12,9 @@ def asistente_ia():
     elif nivel_confianza >= UMBRAL_MINIMO:
         print("Confianza insuficiente. ¿Se refiere a: " + instrucción_detectada + "? Por favor confirme.")
 
+    elif nivel_confianza < UMBRAL_MINIMO:
+        print("Error 404: No pude entender la instrucción. Intente hablar más claro.")
+    
 
 def main():
     asistente_ia()
