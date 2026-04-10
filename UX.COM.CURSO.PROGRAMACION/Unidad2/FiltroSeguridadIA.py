@@ -12,5 +12,11 @@ def filtro_seguridad():
 
     else:
         print( "Error: Lectura fuera de rango. La señal se considera ruido.") 
-        
+
     print("Fin del proceso de filtrado de datos.")
+
+def main():
+    filtro_seguridad()
+
+if __name__ == "__main__":
+    main()
