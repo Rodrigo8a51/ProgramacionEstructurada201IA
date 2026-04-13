@@ -45,7 +45,7 @@ def cargar_y_procesar(nombre_archivo):
                     elif clasificacion == "Clasificacion (Objeto Brillante)":
                         objeto_brillante += 1
                     
-        print("Resultados de clasidicacion:")
+        print("Resultados de clasificacion:")
         print(f"Fondo Oscuro: {fondo_oscuro}")
         print(f"Fondo Gris: {gris_ruido}")
         print(f"Objeto Brillante: {objeto_brillante}")
