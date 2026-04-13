@@ -11,7 +11,7 @@ def clasificador_pixeles(intensidad):
     elif UMBRAL_BAJO < intensidad < UMBRAL_ALTO:
         return "Clasificacion (Fondo Gris)"
 
-    if intensidad >= UMBRAL_ALTO:
+    elif intensidad >= UMBRAL_ALTO:
         return "Clasificacion (Objeto Brillante)"
     
     else: 
