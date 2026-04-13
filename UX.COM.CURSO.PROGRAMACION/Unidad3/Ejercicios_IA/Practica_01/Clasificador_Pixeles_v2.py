@@ -4,18 +4,18 @@ UMBRAL_ALTO = 0.7
 UMBRAL_BAJO = 0.3
 
 def clasificador_pixeles(intensidad):
-
-    if intensidad < 0.0 or intensidad > 1.0:
-        return None
+ 
     if 0.0 <= intensidad <= UMBRAL_BAJO:
         return "Clasificacion (Fondo Oscuro)"
         
-    
-    if UMBRAL_BAJO < intensidad < UMBRAL_ALTO:
+    elif UMBRAL_BAJO < intensidad < UMBRAL_ALTO:
         return "Clasificacion (Fondo Gris)"
 
     if intensidad >= UMBRAL_ALTO:
         return "Clasificacion (Objeto Brillante)"
+    
+    else: 
+        return None
     
 import os
 
