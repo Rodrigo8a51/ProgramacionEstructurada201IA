@@ -44,10 +44,24 @@ def obtener_estadisticas(lista_datos):
     return (maximo, minimo, promedio)
 
 def generar_reporte(total_datos, validos, estadisticas):
-   """
+    """
     FUNCIÓN 4: Imprime un resumen formateado de los resultados.
     """
- # IMPLEMENTAR AQUÍ
+    # IMPLEMENTAR AQUÍ
+
+    v_max, v_min, promedio = estadisticas
+    descartados = total_datos - validos
+
+    print("*" * 30)
+    print("REPORTE DE ANALISIS PREDICTIVO")
+    print("*" * 30)
+    print(f"Total de lecturas procesadas: {total_datos}")
+    print(f"Lecturas válidas: {validos}")
+    print(f"Lecturas descartadas: {descartados}")
+    print(f"Valor máximo: {v_max:.2f}")
+    print(f"Valor mínimo: {v_min:.2f}")
+    print(f"Valor promedio: {promedio:.2f}")
+    print("*" * 30)
 
 # --- LÓGICA PRINCIPAL (NO MODIFICAR ESTA PARTE) ---
 def ejecutar_pipeline():
@@ -57,14 +71,14 @@ def ejecutar_pipeline():
     with open("lecturas_sensores.txt", "r") as f:
         for linea in f:
             cuenta_total += 1
-        valor = limpiar_dato(linea.strip())
-    if valor is not None:
-        # Normalizar para la IA (0-1)
-        datos_finales.append(valor / 100)
+            valor = limpiar_dato(linea.strip())
+            if valor is not None:
+            # Normalizar para la IA (0-1)
+                datos_finales.append(valor / 100)
 
     if datos_finales:
         stats = obtener_estadisticas(datos_finales)
-    generar_reporte(cuenta_total, len(datos_finales), stats)
+        generar_reporte(cuenta_total, len(datos_finales), stats)
 
 if __name__ == "__main__":
  ejecutar_pipeline()
