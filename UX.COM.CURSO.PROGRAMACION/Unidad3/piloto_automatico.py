@@ -14,6 +14,9 @@ def piloto_automatico():
     
     elif color_semaforo == "verde" and distancia >= 5:
         print("Estado: En movimiento. Todo despejado para avanzar.")
+    
+    else:
+        print("Error de lectura en sensores: Color de semáforo no reconocido.")
 
    
 
