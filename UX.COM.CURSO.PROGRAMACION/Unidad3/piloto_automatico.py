@@ -6,7 +6,7 @@ def piloto_automatico():
     if distancia < 5 or peaton == "si":
         print("¡FRENO DE EMERGENCIA ACTIVADO! Deteniendo el vehículo inmediatamente.")
 
-    elif color_semaforo == "rojo":
+    if color_semaforo == "rojo":
         print("Estado: Detenido. Esperando luz verde.")
     
     elif color_semaforo == "amarillo":
