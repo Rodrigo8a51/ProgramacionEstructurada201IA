@@ -37,6 +37,11 @@ def obtener_estadisticas(lista_datos):
     """
     # IMPLEMENTAR AQUÍ
 
+    maximo = max(lista_datos)
+    minimo = min(lista_datos)
+    promedio = sum(lista_datos) / len(lista_datos)
+
+    return (maximo, minimo, promedio)
 
 def generar_reporte(total_datos, validos, estadisticas):
    """
