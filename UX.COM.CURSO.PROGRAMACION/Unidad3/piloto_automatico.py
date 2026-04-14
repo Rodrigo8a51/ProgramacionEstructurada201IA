@@ -1,4 +1,5 @@
 def piloto_automatico():
+    
     distancia = float(input("¿A qué distancia está el objeto más cercano (en metros)?: "))
     color_semaforo = input("¿De qué color está el semáforo? (verde/amarillo/rojo): ").lower()
     peaton = input("¿Hay un peatón cruzando? (si/no): ").lower()
