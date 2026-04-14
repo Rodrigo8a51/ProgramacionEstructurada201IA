@@ -18,6 +18,7 @@ def piloto_automatico():
     else:
         print("Error de lectura en sensores: Color de semáforo no reconocido.")
 
+    print("Monitoreo de sensores constante... Sistema activo.")
    
 
 def main():
