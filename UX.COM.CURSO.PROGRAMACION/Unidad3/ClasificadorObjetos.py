@@ -7,8 +7,15 @@ def clasificador():
         print("Error: Lectura inválida. Verifique el sensor.")
     elif dimension > 0 and dimension <= umbral_pequeño:
         print("Clasificación: Micro-componente (Grado A)")
-    elif dimension > umbral_pequeño and dimension <= umbral grande:
+    elif dimension > umbral_pequeño and dimension <= umbral_grande:
         print("Clasificación: Componente Estándar (Grado B)")
     elif dimension > umbral_grande:
         print("Clasificación: Componente Industrial (Grado C)")
-        
+        volumen = dimension ** 3
+        print("Espacio requerido en contenedor:", volumen, "cm3")
+
+def main():
+    clasificador()
+
+if __name__ == "__main__":
+    main()
