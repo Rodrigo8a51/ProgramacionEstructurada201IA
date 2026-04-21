@@ -15,6 +15,7 @@ def tabla_multiplicar(n):
         print() 
 
 
+
 def main():
 
     limite = int(input("¿Hasta qué número quieres la tabla de multiplicar? "))
