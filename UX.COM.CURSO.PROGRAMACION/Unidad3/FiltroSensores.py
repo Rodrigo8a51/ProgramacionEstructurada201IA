@@ -16,7 +16,7 @@ def deteccion(temperatura):
             temperatura[i] = 35.0
             contador_errores += 1
 
-    return errores
+    return contador_errores
 
 def promedio(temperatura):
     suma = 0
