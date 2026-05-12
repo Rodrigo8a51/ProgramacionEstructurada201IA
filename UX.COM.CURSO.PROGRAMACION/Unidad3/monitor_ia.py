@@ -21,7 +21,9 @@ def monitor_ia():
             return("Temperatura elevada. Reduciendo velocidad de procesamiento (Throttling).")
     
     elif 75 > temperatura_GPU and memoria_VRAM < 80:
-        return("Sistema Estable: Entrenamiento en curso a máxima capacidad.")
+        memoria_libre = 100 - memoria_VRAM
+        return(f"Sistema Estable: Temperatura normal. Memoria VRAM libre: {memoria_libre}%")
+        
 
 def main():
     print("--- TELEMETRÍA DE CLUSTER IA ---")
