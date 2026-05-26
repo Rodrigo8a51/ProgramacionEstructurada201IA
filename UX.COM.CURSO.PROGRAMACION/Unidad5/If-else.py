@@ -6,7 +6,7 @@ def odd_even (number):
             return "Not Weird"
         elif 6 <= number <= 20:
             return "Weird"
-        elif number > 20:
+        else:
             return "Not Weird"
 
 def main():
