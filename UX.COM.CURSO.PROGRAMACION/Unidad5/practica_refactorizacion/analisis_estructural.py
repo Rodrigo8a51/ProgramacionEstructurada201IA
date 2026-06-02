@@ -18,6 +18,7 @@ def verificar_fermat(a, b, c):
         else:
             print("No, esa combinación no funciona.")
 
+# Refactorización usando funciones nativas de math para potencia y raíz cuadrada
 def verificar_fermat_refactorizada(a, b, c, n):
     if n > 2:
         if math.pow(a, n) + math.pow(b, n) == math.pow(c, n):
@@ -40,6 +41,7 @@ def calcular_distancia(x1, y1, x2, y2):
     distancia = suma_cuadrados ** 0.5 
     return distancia
 
+# Refactorización usando funciones nativas de math para potencia y raíz cuadrada
 def calcular_distancia_refactorizada(x1, y1, x2, y2):
     return math.sqrt(math.pow(x2 - x1, 2) + math.pow(y2 - y1, 2))
 
@@ -62,7 +64,8 @@ def obtener_saludo_agente():
         return "Sistemas en línea. Monitoreando el servidor."
     elif opcion == 4:
         return "Hola humano, procesando tus peticiones."
-    
+
+# Refactorización usando random.choice para seleccionar directamente de una lista
 def obtener_saludo_agente_refactorizado():
     saludos = [
         "Hola, soy el agente de IA. ¿En qué ayudo?",
