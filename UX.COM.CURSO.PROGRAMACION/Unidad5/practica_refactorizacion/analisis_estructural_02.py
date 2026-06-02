@@ -1,7 +1,7 @@
 """
 Materia: Programación Estructurada
 Laboratorio: Refactorización y Análisis de Código (Parte II)
-Alumno: [Tu Nombre]
+Alumno: Rodrigo Ochoa Ayala
 """
 import random  # Única librería importada por el novato
 
@@ -42,6 +42,10 @@ def limpiar_nombre_usuario(nombre_sucio):
         return primera_letra + resto_cadena
     return ""
 
+# Refactorización usando strings para limpieza y formateo
+def limpiar_nombre_usuario_refactorizado(nombre_sucio):
+    return nombre_sucio.strip().capitalize()
+
 # =====================================================================
 # RETO 2: Buscador de Palabras Prohibidas (Filtro contra Groserías)
 # Sentido: Banear o censurar mensajes inapropiados en el chat del servidor.
@@ -63,6 +67,9 @@ def contiene_palabra_bloqueada(mensaje_chat, palabra_prohibida):
             
     return False
 
+# Refactorización usando in para buscar la palabra directamente
+def contiene_palabra_bloqueada_refactorizado(mensaje_chat, palabra_prohibida):
+    return palabra_prohibida in mensaje_chat
 
 # =====================================================================
 # RETO 3: Generador de Contraseñas Temporales para Nuevos Usuarios
@@ -80,6 +87,12 @@ def generar_clave_temporal():
         clave_generada = clave_generada + caracter_elegido # Concatenación repetitiva
         
     return clave_generada
+
+# Refactorización usando random.choice para seleccionar directamente de la cadena
+def generar_clave_temporal_refactorizado():
+    caracteres_validos = "ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnpqrstuvwxyz23456789"
+    return ''.join(random.choice(caracteres_validos) for _ in range(8))
+
 
 # =====================================================================
 # RETO 4: Buscador del Valor Central (Mediana de Latencia de Red)
@@ -108,18 +121,31 @@ def calcular_mediana_latencia(lista_pings):
         mitad1 = pings_ordenados[(n // 2) - 1]
         mitad2 = pings_ordenados[n // 2]
         return (mitad1 + mitad2) / 2.0
-
-
+    
+# Refactorización usando sorted para ordenar y cálculo directo de la mediana
+def calcular_mediana_latencia_refactorizado(lista_pings):
+    pings_ordenados = sorted(lista_pings)
+    n = len(pings_ordenados)
+    
+    if n % 2 == 1:
+        return pings_ordenados[n // 2]
+    else:
+        return (pings_ordenados[(n // 2) - 1] + pings_ordenados[n // 2]) / 2.0
+    
 # === PROGRAMA PRINCIPAL (Punto de entrada para probar) ===
 if __name__ == "__main__":
     print("--- Probando Código Inicial (Parte II) ---")
     
     print("Usuario limpio:", [limpiar_nombre_usuario("   luNA_eDUaRDo  ")])
-    
+    print("Usuario limpio:", [limpiar_nombre_usuario_refactorizado("   luNA_eDUaRDo  ")])
+
     msg = "No digas malas palabras en este servidor"
     print("¿Tiene groserías?:", contiene_palabra_bloqueada(msg, "malas"))
+    print("¿Tiene groserías?:", contiene_palabra_bloqueada_refactorizado(msg, "malas"))
     
     print("Clave generada por el sistema:", generar_clave_temporal())
-    
+    print("Clave generada por el sistema (refactorizada):", generar_clave_temporal_refactorizado())
+
     pings_servidor = [120, 45, 80, 23, 150, 62]
     print("Mediana de latencia encontrada:", calcular_mediana_latencia(pings_servidor))
+    print("Mediana de latencia encontrada (refactorizada):", calcular_mediana_latencia_refactorizado(pings_servidor))
