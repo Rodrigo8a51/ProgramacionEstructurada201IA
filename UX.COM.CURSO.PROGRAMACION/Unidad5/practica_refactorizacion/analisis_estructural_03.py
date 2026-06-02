@@ -1,7 +1,7 @@
 """
 Materia: Programación Estructurada
 Laboratorio: Refactorización y Análisis de Código (Parte III)
-Alumno: [Tu Nombre]
+Alumno: Rodrigo Ochoa Ayala
 """
 import math  # El novato solo importó math esta vez
 
@@ -26,6 +26,10 @@ def inicializar_tablero_vacio():
             
     return tablero
 
+# Refactorización usando comprensión de listas para crear una nueva lista de listas
+def inicializar_tablero_vacio_refactorizado():
+    return [[0 for _ in range(4)] for _ in range(4)]
+
 # =====================================================================
 # RETO 2: Recortador de Valores Atípicos (Clamping de Datos)
 # Sentido: Limitar las señales de los sensores del robot a un rango seguro.
@@ -43,6 +47,10 @@ def limitar_senal_sensor(valor_lectura, minimo, maximo):
             resultado = valor_lectura
             
     return resultado
+
+# Refactorización usando la función nativa min y max para simplificar
+def limitar_senal_sensor_refactorizado(valor_lectura, minimo, maximo):
+    return max(minimo, min(valor_lectura, maximo))
 
 # =====================================================================
 # RETO 3: Buscador del Valor Más Cercano a Cero (Error Mínimo)
@@ -68,6 +76,10 @@ def buscar_error_minimo(lista_errores):
             
     return menor_error
 
+# Refactorización usando la función abs para obtener el valor absoluto y min para encontrar el mínimo
+def buscar_error_minimo_refactorizado(lista_errores):
+    return min(abs(valor) for valor in lista_errores)
+
 # =====================================================================
 # RETO 4: Filtro de Valores Únicos (Eliminador de Duplicados)
 # Sentido: Limpiar las IDs de los usuarios del servidor de Discord para
@@ -92,7 +104,9 @@ def depurar_usuarios_repetidos(lista_ids):
             
     return lista_limpia
 
-
+# Refactorización usando set para eliminar duplicados de forma eficiente
+def depurar_usuarios_repetidos_refactorizado(lista_ids):
+    return list(set(lista_ids))
 
 # === PROGRAMA PRINCIPAL (Punto de entrada para probar) ===
 if __name__ == "__main__":
@@ -102,11 +116,17 @@ if __name__ == "__main__":
     print("Tablero inicializado de 4x4:")
     for fila in tablero_ia:
         print(fila)
+    print("Tablero inicializado de 4x4 refactorizado:")
+    for fila in inicializar_tablero_vacio_refactorizado():
+        print(fila)
         
     print("Lectura recortada (125.4 en rango 0-100):", limitar_senal_sensor(125.4, 0.0, 100.0))
+    print("Lectura recortada (125.4 en rango 0-100) refactorizada:", limitar_senal_sensor_refactorizado(125.4, 0.0, 100.0))
     
     errores_entrenamiento = [0.45, -0.12, 0.89, -0.03, 0.22]
     print("El error más cercano a cero es:", buscar_error_minimo(errores_entrenamiento))
+    print("El error más cercano a cero es refactorizado:", buscar_error_minimo_refactorizado(errores_entrenamiento))
     
     ids_discord = [4521, 8892, 4521, 1022, 8892, 9931]
     print("Lista de IDs únicas filtradas:", depurar_usuarios_repetidos(ids_discord))
+    print("Lista de IDs únicas filtradas (refactorizada):", depurar_usuarios_repetidos_refactorizado(ids_discord))
