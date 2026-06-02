@@ -63,6 +63,7 @@ def contiene_palabra_bloqueada(mensaje_chat, palabra_prohibida):
             
     return False
 
+
 # =====================================================================
 # RETO 3: Generador de Contraseñas Temporales para Nuevos Usuarios
 # Sentido: Asignar una clave alfanumérica segura al registrar un agente.

@@ -80,3 +80,4 @@ if __name__ == "__main__":
     print("Distancia calculada:", calcular_distancia(0, 0, 3, 4))
     print("Respuesta bot:", obtener_saludo_agente())
     print("Estado del log:", evaluar_error_sistema(0.85))
+    
